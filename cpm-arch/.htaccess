@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^$ https://alvaccariello.github.io/cpm/ [R=302,L]
+RewriteRule ^(.*)$ https://alvaccariello.github.io/cpm/$1 [R=302,L]

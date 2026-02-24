@@ -1,0 +1,27 @@
+# WHG namespace redirects for https://w3id.org/whg/
+# Apache .htaccess rules for w3id.org registration.
+
+Options +FollowSymLinks
+RewriteEngine On
+
+Header set Access-Control-Allow-Origin *
+
+# Content negotiation for base namespace (JSON -> API schema)
+RewriteCond %{HTTP_ACCEPT} application/json [OR]
+RewriteCond %{HTTP_ACCEPT} application/ld\+json
+RewriteRule ^$ https://whgazetteer.org/api/schema/ [R=303,L]
+
+# Content negotiation for base namespace (HTML -> website)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml
+RewriteRule ^$ https://whgazetteer.org/ [R=303,L]
+
+# Base namespace
+RewriteRule ^$ - [R=404,L]
+
+# Canonical identifier pattern
+# https://w3id.org/whg/id/{id} -> https://whgazetteer.org/entity/{id}/api
+RewriteRule ^id/(.+)$ https://whgazetteer.org/entity/$1/api [R=303,L]
+
+# Fallback: do not redirect to the main website
+RewriteRule ^.*$ - [R=404,L]
