@@ -11,5 +11,7 @@ Version 14 of the CEDS Ontology is expected to be released in March 2026.
 
 ## Contact
 - [Contact Us](https://ceds.ed.gov/ContactUs.aspx)
+
+## Maintainers
 - [Duane Brown](mailto:duane.brown@aemcorp.com) | [GitHub](https://github.com/AEMDuaneBrown)
 - [Nathan Clinton](mailto:nathan.clinton@aemcorp.com) | [GitHub](https://github.com/aemnathanclinton)
